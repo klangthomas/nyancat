@@ -15,13 +15,6 @@ try {
     stage "Test"
     node {
 
-        // Checkout the source of this repository. The credentials and URL are
-        // stored in the configuration of the multibranch pipeline job.
-        checkout scm
-
-        timeout(time: 5, unit: "MINUTES") {
-            sh("py.test complicated_library_test.py")
-        }
     }
 
     // Execute multiple builds in parallel. Each of these targets runs on a
